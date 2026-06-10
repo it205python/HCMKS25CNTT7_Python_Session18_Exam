@@ -30,7 +30,7 @@ def add_product(products_list):
         price_input = int(price_input)
         break
 
-    new_product = [{'id': id_input, 'name': name_input, 'price': price_input}]
+    new_product = {'id': id_input, 'name': name_input, 'price': price_input}
     products_list.append(new_product)
     print("Thêm sản phẩm thành công!")
 
