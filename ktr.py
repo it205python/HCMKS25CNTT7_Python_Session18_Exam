@@ -14,20 +14,25 @@ def add_product(products_list):
         id_input = input("Nhập mã sản phẩm (ID): ").strip().upper()
         if (len(id_input) == 0):
             print("Mã sản phẩm không được để trống! Vui lòng nhập lại: ")
-        else:
-            name_input = input("Nhập tên sản phẩm: ").strip().capitalize()
-            if (len(name_input) == 0):
-                print("Tên sản phẩm không được để trống! Vui lòng nhập lại")
-            else:
-                price_input = input("Nhập giá bán: ")
-                if (not price_input.isdigit() or int(price_input) <= 0):
-                    print("Giá bán phải là số nguyên dương lớn hơn 0")
-                price_input = int(price_input)
+            continue
+        break
+    while True:
+        name_input = input("Nhập tên sản phẩm: ").strip().capitalize()
+        if (len(name_input) == 0):
+            print("Tên sản phẩm không được để trống! Vui lòng nhập lại")
+            continue
+        break
+    while True:
+        price_input = input("Nhập giá bán: ")
+        if (not price_input.isdigit() or int(price_input) <= 0):
+            print("Giá bán phải là số nguyên dương lớn hơn 0")
+            continue
+        price_input = int(price_input)
+        break
 
-                new_product = [{'id': id_input, 'name': name_input, 'price': price_input}]
-                products_list.append(new_product)
-                print("Thêm sản phẩm thành công!")
-                break
+    new_product = [{'id': id_input, 'name': name_input, 'price': price_input}]
+    products_list.append(new_product)
+    print("Thêm sản phẩm thành công!")
 
 def main():
     products = [
